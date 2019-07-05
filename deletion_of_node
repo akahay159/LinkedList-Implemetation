@@ -1,0 +1,34 @@
+'''
+This contains the deletion of the node by key method and by postion 
+method.
+'''
+#by key method 
+    def delete_node_by_key(self,key):
+        cur_node=self.head
+        if cur_node and cur_node.data == key:
+            self.head = cur_node.next
+            cur_node=None
+            return
+        prev=None
+        while(cur_node and cur_node.data!=key):
+            prev=cur_node
+            cur_node=cur_node.next
+        prev.next=cur_node.next
+        cur_node=None
+    #by position method    
+    def delete_node_position(self,pos):
+        cur_node=self.head
+        if pos==0:
+            cur_node=cur_node.next
+            cur_node=None
+            return
+        prev=None
+        count = 0
+        while(cur_node and count!=pos):
+            prev=cur_node
+            cur_node=cur_node.next
+            count+=1
+        if cur_node is None:
+            return # last index of the linked list
+        prev.next=cur_node.next
+        cur_node=None
