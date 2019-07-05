@@ -2,7 +2,7 @@
 This contains the deletion of the node by key method and by postion 
 method.
 '''
-#by key method 
+    #by key method 
     def delete_node_by_key(self,key):
         cur_node=self.head
         if cur_node and cur_node.data == key:
